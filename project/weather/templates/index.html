@@ -1,0 +1,14 @@
+{% extends "partials/head.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <h1 id="title">Weather App</h1>
+    <hr/>
+    <form method="POST" action="{% url "get_city" %}">
+      {% csrf_token %}
+      {{form.city_name}}
+      <input type="submit" value="Buscar" id="submit-input">
+    </form>
+  </div>
+{% endblock content %}
