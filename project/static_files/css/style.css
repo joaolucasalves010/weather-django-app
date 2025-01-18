@@ -55,3 +55,48 @@ hr {
   transform: scale(1.1);
   opacity: 1.0;
 }
+
+#weather-info {
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+
+#weather-info h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+#weather-info span {
+  margin: 0.6rem;
+}
+
+#temperature {
+  font-size: 3rem;
+}
+
+#country {
+  height: 30px;
+}
+
+#description-weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#description-weather p {
+  font-size: 1.5rem;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
