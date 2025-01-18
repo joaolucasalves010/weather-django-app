@@ -5,18 +5,6 @@ import requests
 
 # Create your views here.
 def index(request):
-
-  form = CityNameForm()
-
-  context = {
-    'form': form,
-    'class': 'hide',
-  }
-
-  return render(request, 'index.html', context)
-
-
-def get_city(request):
   if request.method == "POST":
     city_name = request.POST.get('city_name')
     API_KEY = "858ac266a21efbe6a36fa07337cb5c7c"
@@ -34,6 +22,15 @@ def get_city(request):
         "temperature": data["main"]["temp"],
         "description": data["weather"][0]["description"],
       }
-      return render(request, 'index.html', context)
     else:
-      return redirect('index')
+      context = {
+        "form": CityNameForm(),
+        "class":  "hide",
+      }
+  else:
+    form = CityNameForm()
+    context = {
+      "form": form,
+      "class": "hide",
+    }
+  return render(request, 'index.html', context)
