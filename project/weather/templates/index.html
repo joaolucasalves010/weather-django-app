@@ -5,7 +5,8 @@
   <div class="container">
     <h1 id="title">Weather App</h1>
     <hr/>
-    <form method="POST" action="{% url "get_city" %}">
+      <button onclick="changeMode()" id="switch"></button>
+    <form method="POST" action="{% url "index" %}">
       {% csrf_token %}
       {{form.city_name}}
       <input type="submit" value="Buscar" id="submit-input">
@@ -16,6 +17,10 @@
       <div id="description-weather">
         <img src="http://openweathermap.org/img/wn/{{icon}}.png" id="weather-icon">
         <p>{{description}}</p>
+      </div>
+      <div id="wind">
+        <i class="fa-solid fa-wind"></i>
+        <p>{{wind_speed}} Km/h</p>
       </div>
     </div>
   </div>

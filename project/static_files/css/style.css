@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
 }
 
 .container {
@@ -14,9 +14,23 @@ body {
   width: 100%;
   text-align: center;
   margin: 4rem auto;
-  background-color: #1c1c1c;
+  background-color: var(--bg-color);
   border-radius: 10px;
   padding: 1rem;
+}
+
+:root {
+  --text-color: #fff;
+  --main-bg-color: #000;
+  --bg-color: #1c1c1c;
+  --button-bg: url(../img/sun.svg);
+}
+
+.light {
+  --text-color: #000;
+  --main-bg-color: #ccc;
+  --bg-color: #fdfdfd;
+  --button-bg: url(../img/moon-stars.svg);
 }
 
 
@@ -25,16 +39,13 @@ body {
   margin: 1rem;
 }
 
-hr {
-  border-color: #1c1c1c;
-}
 
 #city_name_input {
   margin: 1rem;
   padding: 1rem;
   border-radius: 1rem;
   outline: none;
-  border: none;
+  border: 1px solid #000;
   font-size: 1rem;
 }
 
@@ -91,6 +102,33 @@ hr {
 
 #description-weather p {
   font-size: 1.5rem;
+}
+
+#wind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wind p {
+  font-size: 1.5rem;
+}
+
+#switch{
+  height: 32px;
+  width: 32px;
+  border: none;
+  border-radius: 50%;
+  background: white var(--button-bg) no-repeat center;
+  cursor: pointer;
+  animation: slide-back 0.4s;
+  margin: 10px;
+  border: 1px solid #1c1c1c;
+  transition: 0.5s;
+}
+
+#switch:hover {
+  transform: scale(1.1);
 }
 
 .show {

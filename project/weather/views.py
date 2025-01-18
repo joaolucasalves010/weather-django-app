@@ -21,6 +21,7 @@ def index(request):
         "icon": data["weather"][0]["icon"],
         "temperature": data["main"]["temp"],
         "description": data["weather"][0]["description"],
+        "wind_speed": data["wind"]["speed"],
       }
     else:
       context = {
