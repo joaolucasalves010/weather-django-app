@@ -8,7 +8,7 @@ def index(request):
   if request.method == "POST":
     city_name = request.POST.get('city_name')
     API_KEY = "858ac266a21efbe6a36fa07337cb5c7c"
-    URL = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY}&lang=pt_br&units=metric"
+    URL = f"https://api.openweathermap.org/data/2.5/weather?q={city_name.strip()}&appid={API_KEY}&lang=pt_br&units=metric"
     response = requests.get(URL)
     if response.status_code == 200:
       data = response.json()
